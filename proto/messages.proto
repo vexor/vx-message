@@ -1,0 +1,66 @@
+package vx.message;
+
+message PerformBuild {
+  required uint64 id              = 1;
+  required string name            = 2;
+  required string src             = 3;
+  required string sha             = 4;
+  optional string deploy_key      = 6;
+  required string travis          = 7;
+  required string branch          = 8;
+  optional uint64 pull_request_id = 9;
+}
+
+message PerformJob {
+  required uint64 id              = 1;
+  required string name            = 2;
+  required uint64 job_id          = 7;
+  required string before_script   = 8;
+  required string script          = 9;
+  required string after_script    = 11;
+  repeated string matrix_keys     = 10;
+}
+
+message BuildLog {
+  required uint64 build_id = 1;
+  required string log      = 2;
+  required uint64 tm       = 3;
+}
+
+message JobLog {
+  required uint64 build_id = 1;
+  required string log      = 2;
+  required uint64 tm       = 3;
+  required uint64 job_id   = 5;
+}
+
+message BuildStatus {
+  enum Status {
+    INITIALIZED = 0;
+    STARTED     = 2;
+    FINISHED    = 3;
+    BROKEN      = 4;
+    FAILED      = 5;
+  }
+
+  required uint64 build_id            = 1;
+  required Status status              = 2;
+  required uint64 tm                  = 3;
+  required uint32 jobs_count          = 5;
+}
+
+message JobStatus {
+  enum Status {
+    INITIALIZED = 0;
+    STARTED     = 2;
+    FINISHED    = 3;
+    BROKEN      = 4;
+    FAILED      = 5;
+  }
+  required uint64 build_id = 1;
+  required uint64 job_id   = 2;
+  required Status status   = 3;
+  required uint64 tm       = 4;
+  repeated string matrix   = 6;
+}
+
