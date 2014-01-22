@@ -23,13 +23,13 @@ module Vx
       include Beefcake::Message
 
 
-      required :id, :uint64, 1
-      required :name, :string, 2
-      required :job_id, :uint64, 7
-      required :before_script, :string, 8
-      required :script, :string, 9
-      required :after_script, :string, 11
-      repeated :matrix_keys, :string, 10
+      required :project_id, :uint64, 1
+      required :id, :uint64, 2
+      required :name, :string, 3
+      required :job_id, :uint64, 4
+      required :before_script, :string, 5
+      required :script, :string, 6
+      required :after_script, :string, 7
 
     end
 

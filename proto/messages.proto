@@ -12,7 +12,7 @@ message PerformBuild {
 }
 
 message PerformJob {
-  required uint64 project_id      = 1
+  required uint64 project_id      = 1;
   required uint64 id              = 2;
   required string name            = 3;
   required uint64 job_id          = 4;
