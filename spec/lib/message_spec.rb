@@ -21,12 +21,6 @@ describe Vx::Message do
         expect(obj).to eq subject
       end
 
-      if klass == 'JobStatus'
-        it "should have project_id" do
-          expect(subject.project_id).to eq 1
-        end
-      end
-
     end
   end
 end

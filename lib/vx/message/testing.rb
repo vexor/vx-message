@@ -103,13 +103,13 @@ module Vx
 
         def test_attributes(options = {})
           options.merge({
+            project_id:    options[:project_id]    || 1,
             id:            options[:id]            || 1,
             name:          options[:name]          || 'evrone/test-repo',
             job_id:        options[:job_id]        || 2,
             before_script: options[:before_script] || 'echo before_script',
             script:        options[:script]        || 'echo script',
-            after_script:  options[:after_script]  || 'echo after_script',
-            matrix_keys:   options[:matrix_keys]   || %w{ rvm:2.0.0 }
+            after_script:  options[:after_script]  || 'echo after_script'
           })
         end
 

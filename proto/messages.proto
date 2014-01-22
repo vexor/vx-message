@@ -12,13 +12,13 @@ message PerformBuild {
 }
 
 message PerformJob {
-  required uint64 id              = 1;
-  required string name            = 2;
-  required uint64 job_id          = 7;
-  required string before_script   = 8;
-  required string script          = 9;
-  required string after_script    = 11;
-  repeated string matrix_keys     = 10;
+  required uint64 project_id      = 1
+  required uint64 id              = 2;
+  required string name            = 3;
+  required uint64 job_id          = 4;
+  required string before_script   = 5;
+  required string script          = 6;
+  required string after_script    = 7;
 }
 
 message BuildLog {
