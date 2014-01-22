@@ -57,10 +57,10 @@ message JobStatus {
     BROKEN      = 4;
     FAILED      = 5;
   }
-  required uint64 build_id = 1;
-  required uint64 job_id   = 2;
-  required Status status   = 3;
-  required uint64 tm       = 4;
-  repeated string matrix   = 6;
+  required uint64 project_id = 1;
+  required uint64 build_id   = 2;
+  required uint64 job_id     = 3;
+  required Status status     = 4;
+  required uint64 tm         = 5;
 }
 

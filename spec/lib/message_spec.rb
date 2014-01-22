@@ -22,8 +22,8 @@ describe Vx::Message do
       end
 
       if klass == 'JobStatus'
-        it "should have matrix" do
-          expect(subject.matrix).to eq ["env:FOO = 1", "rvm:1.9.3"]
+        it "should have project_id" do
+          expect(subject.project_id).to eq 1
         end
       end
 

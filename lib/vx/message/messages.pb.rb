@@ -83,11 +83,11 @@ module Vx
         FAILED = 5
       end
 
-      required :build_id, :uint64, 1
-      required :job_id, :uint64, 2
-      required :status, JobStatus::Status, 3
-      required :tm, :uint64, 4
-      repeated :matrix, :string, 6
+      required :project_id, :uint64, 1
+      required :build_id, :uint64, 2
+      required :job_id, :uint64, 3
+      required :status, JobStatus::Status, 4
+      required :tm, :uint64, 5
 
     end
   end

@@ -27,11 +27,11 @@ module Vx
 
         def test_attributes(options = {})
           {
-            build_id: 1,
-            job_id:   2,
-            status:   0,
-            tm:       1376137604,
-            matrix:   ["env:FOO = 1", "rvm:1.9.3"]
+            project_id: 1,
+            build_id:   1,
+            job_id:     2,
+            status:     0,
+            tm:         1376137604,
           }.merge(options)
         end
 
