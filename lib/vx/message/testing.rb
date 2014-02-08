@@ -4,24 +4,6 @@ require File.expand_path("../../message", __FILE__)
 module Vx
   module Message
 
-    class BuildInfo
-      class << self
-
-        def test_attributes(options = {})
-          {
-            build_id:       1,
-            commit_author:  'Автор по русски',
-            commit_message: 'Сообщение по русски',
-          }.merge(options)
-        end
-
-        def test_message(options = {})
-          new test_attributes(options)
-        end
-
-      end
-    end
-
     class JobStatus
       class << self
 
@@ -32,25 +14,6 @@ module Vx
             job_id:     2,
             status:     0,
             tm:         1376137604,
-          }.merge(options)
-        end
-
-        def test_message(options = {})
-          new test_attributes(options)
-        end
-
-      end
-    end
-
-    class BuildStatus
-      class << self
-
-        def test_attributes(options = {})
-          {
-            build_id: 1,
-            status:   0,
-            tm:       1376137604,
-            jobs_count: 1,
           }.merge(options)
         end
 
@@ -80,31 +43,13 @@ module Vx
       end
     end
 
-    class BuildLog
-      class << self
-
-        def test_attributes(options = {})
-          {
-            build_id: 1,
-            log:      'log',
-            tm:       1376137604,
-          }.merge(options)
-        end
-
-        def test_message(options = {})
-          new test_attributes(options)
-        end
-
-      end
-    end
-
     class PerformJob
       class << self
 
         def test_attributes(options = {})
           options.merge({
             project_id:    options[:project_id]    || 1,
-            id:            options[:id]            || 1,
+            build_id:      options[:build_id]      || 1,
             name:          options[:name]          || 'evrone/test-repo',
             job_id:        options[:job_id]        || 2,
             before_script: options[:before_script] || 'echo before_script',

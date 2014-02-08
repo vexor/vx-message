@@ -24,22 +24,13 @@ module Vx
 
 
       required :project_id, :uint64, 1
-      required :id, :uint64, 2
+      required :build_id, :uint64, 2
       required :name, :string, 3
       required :job_id, :uint64, 4
       required :before_script, :string, 5
       required :script, :string, 6
       required :after_script, :string, 7
-
-    end
-
-    class BuildLog
-      include Beefcake::Message
-
-
-      required :build_id, :uint64, 1
-      required :log, :string, 2
-      required :tm, :uint64, 3
+      optional :image, :string, 8
 
     end
 
@@ -51,24 +42,6 @@ module Vx
       required :log, :string, 2
       required :tm, :uint64, 3
       required :job_id, :uint64, 5
-
-    end
-
-    class BuildStatus
-      include Beefcake::Message
-
-      module Status
-        INITIALIZED = 0
-        STARTED = 2
-        FINISHED = 3
-        BROKEN = 4
-        FAILED = 5
-      end
-
-      required :build_id, :uint64, 1
-      required :status, BuildStatus::Status, 2
-      required :tm, :uint64, 3
-      required :jobs_count, :uint32, 5
 
     end
 
