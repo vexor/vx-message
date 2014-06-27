@@ -11,13 +11,13 @@ describe Vx::Message do
       subject { inst.test_message }
 
       it "should be valid" do
-        expect(subject.validate!).to be_true
+        expect(subject.validate!).to be
       end
 
       it "should be successfuly serialized/deserialized" do
         bytes = subject.encode
         obj = described_class.const_get(klass).decode(bytes)
-        expect(obj.validate!).to be_true
+        expect(obj.validate!).to be
         expect(obj).to eq subject
       end
 

@@ -12,21 +12,41 @@ message PerformBuild {
 }
 
 message PerformJob {
-  required uint64 project_id      = 1;
-  required uint64 build_id        = 2;
-  required string name            = 3;
-  required uint64 job_id          = 4;
-  required string before_script   = 5;
-  required string script          = 6;
-  required string after_script    = 7;
-  optional string image           = 8;
+  required string company_id      = 1;
+  required string company_name    = 2;
+
+  required string project_id      = 3;
+  required string project_name    = 4;
+
+  required string build_id        = 5;
+  required uint64 build_number    = 6;
+
+  required string job_id          = 7;
+  required uint64 job_number      = 8;
+  required uint64 job_version     = 9;
+
+  required string before_script   = 10;
+  required string script          = 11;
+  required string after_script    = 12;
+  optional string image           = 13;
 }
 
 message JobLog {
-  required uint64 build_id = 1;
-  required string log      = 2;
-  required uint64 tm       = 3;
-  required uint64 job_id   = 5;
+  required string company_id      = 1;
+  required string company_name    = 2;
+
+  required string project_id      = 3;
+  required string project_name    = 4;
+
+  required string build_id        = 5;
+  required uint64 build_number    = 6;
+
+  required string job_id          = 7;
+  required uint64 job_number      = 8;
+  required uint64 job_version     = 9;
+
+  required string log             = 10;
+  required uint64 tm              = 11;
 }
 
 message JobStatus {
@@ -37,10 +57,21 @@ message JobStatus {
     BROKEN      = 4;
     FAILED      = 5;
   }
-  required uint64 project_id = 1;
-  required uint64 build_id   = 2;
-  required uint64 job_id     = 3;
-  required Status status     = 4;
-  required uint64 tm         = 5;
+
+  required string company_id      = 1;
+  required string company_name    = 2;
+
+  required string project_id      = 3;
+  required string project_name    = 4;
+
+  required string build_id        = 5;
+  required uint64 build_number    = 6;
+
+  required string job_id          = 7;
+  required uint64 job_number      = 8;
+  required uint64 job_version     = 9;
+
+  required Status status          = 10;
+  required uint64 tm              = 11;
 }
 

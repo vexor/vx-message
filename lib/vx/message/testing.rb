@@ -4,17 +4,30 @@ require File.expand_path("../../message", __FILE__)
 module Vx
   module Message
 
+    @@common = {
+      company_id:   '1',
+      company_name: 'company name',
+      project_id:   '2',
+      project_name: 'project name',
+      build_id:     '3',
+      build_number: 4,
+      job_id:       '5',
+      job_number:   6,
+      job_version:  1
+    }
+
+    def self.common
+      @@common
+    end
+
     class JobStatus
       class << self
 
         def test_attributes(options = {})
-          {
-            project_id: 1,
-            build_id:   1,
-            job_id:     2,
+          Message.common.merge(
             status:     0,
             tm:         1376137604,
-          }.merge(options)
+          ).merge(options)
         end
 
         def test_message(options = {})
@@ -28,12 +41,10 @@ module Vx
       class << self
 
         def test_attributes(options = {})
-          {
-            build_id: 1,
-            job_id:   2,
-            log:      'log',
-            tm:       1376137604,
-          }.merge(options)
+          Message.common.merge(
+            log: 'log',
+            tm:  1376137604,
+          ).merge(options)
         end
 
         def test_message(options = {})
@@ -47,15 +58,11 @@ module Vx
       class << self
 
         def test_attributes(options = {})
-          options.merge({
-            project_id:    options[:project_id]    || 1,
-            build_id:      options[:build_id]      || 1,
-            name:          options[:name]          || 'evrone/test-repo',
-            job_id:        options[:job_id]        || 2,
-            before_script: options[:before_script] || 'echo before_script',
-            script:        options[:script]        || 'echo script',
-            after_script:  options[:after_script]  || 'echo after_script'
-          })
+          Message.common.merge(
+            before_script: 'echo before_script',
+            script:        'echo script',
+            after_script:  'echo after_script',
+          ).merge(options)
         end
 
         def test_message(options = {})
