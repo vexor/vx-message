@@ -1,16 +1,5 @@
 package vx.message;
 
-message PerformBuild {
-  required uint64 id              = 1;
-  required string name            = 2;
-  required string src             = 3;
-  required string sha             = 4;
-  optional string deploy_key      = 6;
-  required string travis          = 7;
-  required string branch          = 8;
-  optional uint64 pull_request_id = 9;
-}
-
 message PerformJob {
   required string company_id      = 1;
   required string company_name    = 2;

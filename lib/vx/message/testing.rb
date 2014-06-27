@@ -72,29 +72,5 @@ module Vx
       end
     end
 
-    class PerformBuild
-      class << self
-
-        def test_attributes(options = {})
-          key = File.read File.expand_path("../../../../fixtures/insecure_private_key", __FILE__)
-          travis = File.read File.expand_path("../../../../fixtures/travis.yml", __FILE__)
-          options.merge({
-            id:         options[:id]         || 1,
-            name:       options[:name]       || 'evrone/test-repo',
-            src:        options[:src]        || "git@github.com:dima-exe/ci-worker-test-repo.git",
-            sha:        options[:sha]        || "b665f90239563c030f1b280a434b3d84daeda1bd",
-            deploy_key: options[:deploy_key] || key,
-            travis:     options[:travis]     || travis,
-            branch:     options[:branch]     || "master"
-          })
-        end
-
-        def test_message(options = {})
-          new test_attributes(options)
-        end
-
-      end
-    end
-
   end
 end
