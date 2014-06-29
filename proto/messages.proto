@@ -18,6 +18,9 @@ message PerformJob {
   required string script          = 11;
   required string after_script    = 12;
   optional string image           = 13;
+
+  optional uint64 timeout         = 14;
+  optional uint64 read_timeout    = 15;
 }
 
 message JobLog {

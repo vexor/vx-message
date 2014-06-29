@@ -4,10 +4,6 @@ require "beefcake"
 module Vx
   module Message
 
-    class PerformBuild
-      include Beefcake::Message
-    end
-
     class PerformJob
       include Beefcake::Message
     end
@@ -28,17 +24,6 @@ module Vx
       end
     end
 
-    class PerformBuild
-      required :id, :uint64, 1
-      required :name, :string, 2
-      required :src, :string, 3
-      required :sha, :string, 4
-      optional :deploy_key, :string, 6
-      required :travis, :string, 7
-      required :branch, :string, 8
-      optional :pull_request_id, :uint64, 9
-    end
-
     class PerformJob
       required :company_id, :string, 1
       required :company_name, :string, 2
@@ -53,6 +38,8 @@ module Vx
       required :script, :string, 11
       required :after_script, :string, 12
       optional :image, :string, 13
+      optional :timeout, :uint64, 14
+      optional :read_timeout, :uint64, 15
     end
 
     class JobLog
