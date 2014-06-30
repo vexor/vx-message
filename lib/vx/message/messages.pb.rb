@@ -38,8 +38,8 @@ module Vx
       required :script, :string, 11
       required :after_script, :string, 12
       optional :image, :string, 13
-      optional :timeout, :uint64, 14
-      optional :read_timeout, :uint64, 15
+      optional :job_timeout, :uint64, 14
+      optional :job_read_timeout, :uint64, 15
     end
 
     class JobLog
