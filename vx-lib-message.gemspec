@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'vx/message/version'
+require 'vx/lib/message/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "vx-message"
-  spec.version       = Vx::Message::VERSION
+  spec.name          = "vx-lib-message"
+  spec.version       = Vx::Lib::Message::VERSION
   spec.authors       = ["Dmitry Galinsky"]
   spec.email         = ["dima.exe@gmail.com"]
   spec.description   = %q{ Evrone CI messages }

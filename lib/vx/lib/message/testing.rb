@@ -1,7 +1,7 @@
 # coding: utf-8
 require File.expand_path("../../message", __FILE__)
 
-module Vx
+module Vx ; module Lib
   module Message
 
     @@common = {
@@ -73,4 +73,4 @@ module Vx
     end
 
   end
-end
+end ; end
