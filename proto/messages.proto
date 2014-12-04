@@ -1,4 +1,4 @@
-package vx.message;
+package vx.lib.message;
 
 message PerformJob {
   required string company_id      = 1;

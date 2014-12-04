@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'stringio'
 
-describe Vx::Message do
+describe Vx::Lib::Message do
 
   %w{ PerformJob JobLog JobStatus }.each do |klass|
 
