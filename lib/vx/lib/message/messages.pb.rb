@@ -69,6 +69,8 @@ module Vx
         required :job_version, :uint64, 9
         required :status, JobStatus::Status, 10
         required :tm, :uint64, 11
+        optional :docker_host, :string, 12
+        optional :docker_container_id, :string, 13
       end
     end
   end
