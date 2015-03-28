@@ -50,20 +50,23 @@ message JobStatus {
     FAILED      = 5;
   }
 
-  required string company_id      = 1;
-  required string company_name    = 2;
+  required string company_id          = 1;
+  required string company_name        = 2;
 
-  required string project_id      = 3;
-  required string project_name    = 4;
+  required string project_id          = 3;
+  required string project_name        = 4;
 
-  required string build_id        = 5;
-  required uint64 build_number    = 6;
+  required string build_id            = 5;
+  required uint64 build_number        = 6;
 
-  required string job_id          = 7;
-  required uint64 job_number      = 8;
-  required uint64 job_version     = 9;
+  required string job_id              = 7;
+  required uint64 job_number          = 8;
+  required uint64 job_version         = 9;
 
-  required Status status          = 10;
-  required uint64 tm              = 11;
+  required Status status              = 10;
+  required uint64 tm                  = 11;
+
+  optional string docker_host         = 12;
+  optional string docker_container_id = 13;
 }
 
