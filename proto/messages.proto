@@ -70,3 +70,7 @@ message JobStatus {
   optional string docker_container_id = 13;
 }
 
+message Company {
+  required string company_id          = 1;
+  required string company_name        = 2;
+}

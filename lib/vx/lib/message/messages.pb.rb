@@ -72,6 +72,11 @@ module Vx
         optional :docker_host, :string, 12
         optional :docker_container_id, :string, 13
       end
+
+      class Company
+        required :company_id, :string, 1
+        required :company_name, :string, 2
+      end
     end
   end
 end
