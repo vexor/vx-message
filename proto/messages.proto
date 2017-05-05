@@ -1,4 +1,10 @@
+syntax = "proto2";
 package vx.lib.message;
+
+message Service {
+  required string name    = 1;
+  optional string version = 2;
+}
 
 message PerformJob {
   required string company_id      = 1;
@@ -21,6 +27,8 @@ message PerformJob {
 
   optional uint64 job_timeout      = 14;
   optional uint64 job_read_timeout = 15;
+
+  repeated Service services        = 16;
 }
 
 message JobLog {

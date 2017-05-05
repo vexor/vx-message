@@ -13,11 +13,27 @@ module Vx ; module Lib
       build_number: 4,
       job_id:       '5',
       job_number:   6,
-      job_version:  1
+      job_version:  1,
+      services: [Service.new( name: "postgres" )]
     }
 
     def self.common
       @@common
+    end
+
+    class Service
+      class << self
+        def test_attributes(options = {})
+          Message.common.merge(
+            name: "postgres",
+            version: "9.6"
+          ).merge(options)
+        end
+
+        def test_message(options = {})
+          new test_attributes(options)
+        end
+      end
     end
 
     class JobStatus

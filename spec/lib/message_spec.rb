@@ -3,7 +3,7 @@ require 'stringio'
 
 describe Vx::Lib::Message do
 
-  %w{ PerformJob JobLog JobStatus }.each do |klass|
+  %w{ Service PerformJob JobLog JobStatus }.each do |klass|
 
     context "#{klass}" do
 

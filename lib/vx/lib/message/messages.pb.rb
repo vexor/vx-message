@@ -5,6 +5,10 @@ module Vx
   module Lib
     module Message
 
+      class Service
+        include Beefcake::Message
+      end
+
       class PerformJob
         include Beefcake::Message
       end
@@ -25,8 +29,16 @@ module Vx
         end
       end
 
-      class PerformJob
+      class Company
         include Beefcake::Message
+      end
+
+      class Service
+        required :name, :string, 1
+        optional :version, :string, 2
+      end
+
+      class PerformJob
         required :company_id, :string, 1
         required :company_name, :string, 2
         required :project_id, :string, 3
@@ -42,10 +54,10 @@ module Vx
         optional :image, :string, 13
         optional :job_timeout, :uint64, 14
         optional :job_read_timeout, :uint64, 15
+        repeated :services, Service, 16
       end
 
       class JobLog
-        include Beefcake::Message
         required :company_id, :string, 1
         required :company_name, :string, 2
         required :project_id, :string, 3
@@ -60,7 +72,6 @@ module Vx
       end
 
       class JobStatus
-        include Beefcake::Message
         required :company_id, :string, 1
         required :company_name, :string, 2
         required :project_id, :string, 3
@@ -77,7 +88,6 @@ module Vx
       end
 
       class Company
-        include Beefcake::Message
         required :company_id, :string, 1
         required :company_name, :string, 2
       end
